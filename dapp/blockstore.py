@@ -4,20 +4,19 @@
 
 import logging
 
-from .. import config, dapp
-from ..proto import Protocol
-from ..chain.message import Message
+from contractvm import dapp, config
+from . import api, core, proto message
 
 logger = logging.getLogger(config.APP_NAME)
 
 class BlockStoreDapp (dapp.Dapp):
 	def __init__ (self, chain, db, dht, apiMaster):
-		self.core = BlockStoreCore (chain, db)
-		api = BlockStoreAPI (self.core, dht, apiMaster)
-		super (BlockStoreDapp, self).__init__("BS", BlockStoreProto.DAPP_CODE, BlockStoreProto.METHOD_LIST, chain, db, dht, api)
+		self.core = core.BlockStoreCore (chain, db)
+		api = api.BlockStoreAPI (self.core, dht, apiMaster)
+		super (BlockStoreDapp, self).__init__("BS", proto.BlockStoreProto.DAPP_CODE, proto.BlockStoreProto.METHOD_LIST, chain, db, dht, api)
 
 	def handleMessage (self, m):
-		if m.Method == BlockStoreProto.METHOD_SET:
+		if m.Method == proto.BlockStoreProto.METHOD_SET:
 			logger.pluginfo ('Found new message %s: set %s', m.Hash, m.Data['key'])
 			self.core.set (m.Data['key'], m.Data['value'])
 			

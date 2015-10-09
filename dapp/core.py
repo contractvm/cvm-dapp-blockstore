@@ -3,6 +3,8 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import logging
+from contractvm import dapp, config
+
 logger = logging.getLogger(config.APP_NAME)
 
 class BlockStoreCore (dapp.Core):

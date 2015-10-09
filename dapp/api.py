@@ -3,8 +3,8 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import logging
-
-from .. import config, dapp
+from contractvm import dapp, config
+from . import message
 
 logger = logging.getLogger(config.APP_NAME)
 
@@ -40,7 +40,7 @@ class BlockStoreAPI (dapp.API):
 		if self.core.get (key) != None:
 			return self.createErrorResponse ('KEY_ALREADY_SET')
 		
-		message = BlockStoreMessage.set (key, value)
+		message = message.BlockStoreMessage.set (key, value)
 		[datahash, outscript, tempid] = message.toOutputScript (self.dht)
 		r = { "outscript": outscript, "datahash": datahash, "tempid": tempid, "fee": Protocol.estimateFee (self.core.getChainCode (), 100 * len (value)) }
 		return r
