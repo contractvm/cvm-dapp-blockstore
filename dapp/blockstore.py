@@ -7,6 +7,7 @@ import logging
 from contractvmd import dapp, config
 import api, core, proto, message
 
+print (api)
 logger = logging.getLogger(config.APP_NAME)
 
 class blockstore (dapp.Dapp):
