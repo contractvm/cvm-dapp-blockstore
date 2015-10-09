@@ -9,11 +9,11 @@ from . import api, core, proto message
 
 logger = logging.getLogger(config.APP_NAME)
 
-class BlockStoreDapp (dapp.Dapp):
+class blockstore (dapp.Dapp):
 	def __init__ (self, chain, db, dht, apiMaster):
 		self.core = core.BlockStoreCore (chain, db)
 		api = api.BlockStoreAPI (self.core, dht, apiMaster)
-		super (BlockStoreDapp, self).__init__("BS", proto.BlockStoreProto.DAPP_CODE, proto.BlockStoreProto.METHOD_LIST, chain, db, dht, api)
+		super (blockstore, self).__init__("BS", proto.BlockStoreProto.DAPP_CODE, proto.BlockStoreProto.METHOD_LIST, chain, db, dht, api)
 
 	def handleMessage (self, m):
 		if m.Method == proto.BlockStoreProto.METHOD_SET:
