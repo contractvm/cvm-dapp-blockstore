@@ -3,7 +3,8 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from libcontractvm import Wallet, WalletNode, BlockStoreManager, ConsensusManager
+from libcontractvm import Wallet, WalletNode, ConsensusManager
+from blockstore import BlockstoreManager
 import sys
 import config
 
@@ -14,7 +15,7 @@ consMan.addNode ("http://127.0.0.1:8181")
 
 wallet=WalletNode.WalletNode (chain='XLT', url=config.WALLET_NODE_URL, wallet_file='data/test_xltnode_a.wallet')
 			
-bsMan = BlockStoreManager.BlockStoreManager (consMan, wallet=wallet)
+bsMan = BlockstoreManager.BlockstoreManager (consMan, wallet=wallet)
 
 def set_key ():
 	ykey = input ('Insert a key to set: ')
