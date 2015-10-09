@@ -12,6 +12,7 @@ logger = logging.getLogger(config.APP_NAME)
 class blockstore (dapp.Dapp):
 	def __init__ (self, chain, db, dht, apiMaster):
 		self.core = core.BlockStoreCore (chain, db)
+		print (api)
 		api = api.BlockStoreAPI (self.core, dht, apiMaster)
 		super (blockstore, self).__init__("BS", proto.BlockStoreProto.DAPP_CODE, proto.BlockStoreProto.METHOD_LIST, chain, db, dht, api)
 
