@@ -4,7 +4,7 @@
 
 import logging
 from contractvmd import dapp, config
-from . import message
+import message
 
 logger = logging.getLogger(config.APP_NAME)
 

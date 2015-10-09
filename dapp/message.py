@@ -3,7 +3,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 from contractvmd.chain import message
-from . import proto
+import proto
 
 class BlockStoreMessage (message.Message):
 	def set (key, value):
