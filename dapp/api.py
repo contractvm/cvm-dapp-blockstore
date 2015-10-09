@@ -3,8 +3,8 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import logging
-from contractvmd import dapp, config
 import message
+from contractvmd import dapp, config, proto
 
 logger = logging.getLogger(config.APP_NAME)
 
@@ -42,5 +42,5 @@ class BlockStoreAPI (dapp.API):
 		
 		msg = message.BlockStoreMessage.set (key, value)
 		[datahash, outscript, tempid] = msg.toOutputScript (self.dht)
-		r = { "outscript": outscript, "datahash": datahash, "tempid": tempid, "fee": Protocol.estimateFee (self.core.getChainCode (), 100 * len (value)) }
+		r = { "outscript": outscript, "datahash": datahash, "tempid": tempid, "fee": proto.Protocol.estimateFee (self.core.getChainCode (), 100 * len (value)) }
 		return r
