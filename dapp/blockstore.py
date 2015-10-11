@@ -5,7 +5,7 @@
 import logging
 
 from contractvmd import dapp, config
-import api, core, proto, message
+from . import api, core, proto, message
 
 logger = logging.getLogger(config.APP_NAME)
 

@@ -3,7 +3,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 import logging
-import message
+from . import message
 from contractvmd import dapp, config, proto
 
 logger = logging.getLogger(config.APP_NAME)
