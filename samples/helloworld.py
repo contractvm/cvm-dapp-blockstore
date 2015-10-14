@@ -9,7 +9,7 @@ import sys
 import config
 
 consMan = ConsensusManager.ConsensusManager ()
-consMan.addNode ("http://127.0.0.1:8181")
+consMan.bootstrap ("http://127.0.0.1:8181")
 #consMan.addNode ("http://127.0.0.1:2819")
 #consMan.addNode ("http://127.0.0.1:2820")
 
