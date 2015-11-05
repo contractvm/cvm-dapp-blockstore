@@ -35,12 +35,14 @@ class BlockStoreAPI (dapp.API):
 			return self.createErrorResponse ('KEY_IS_NOT_SET')
 		else:
 			return v
-		
+
 	def method_set (self, key, value):
 		if self.core.get (key) != None:
 			return self.createErrorResponse ('KEY_ALREADY_SET')
-		
+
 		msg = message.BlockStoreMessage.set (key, value)
-		[datahash, outscript, tempid] = msg.toOutputScript (self.dht)
-		r = { "outscript": outscript, "datahash": datahash, "tempid": tempid, "fee": proto.Protocol.estimateFee (self.core.getChainCode (), 100 * len (value)) }
-		return r
+		return self.createTransactionResponse (msg)
+		
+		#[datahash, outscript, tempid] = msg.toOutputScript (self.dht)
+		#r = { "outscript": outscript, "datahash": datahash, "tempid": tempid, "fee": proto.Protocol.estimateFee (self.core.getChainCode (), 100 * len (value)) }
+		#return r
