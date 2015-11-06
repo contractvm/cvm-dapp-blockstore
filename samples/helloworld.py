@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-from libcontractvm import Wallet, WalletChainSo, ConsensusManager
+from libcontractvm import Wallet, WalletNode, ConsensusManager
 from blockstore import BlockstoreManager
 import sys
 import config
