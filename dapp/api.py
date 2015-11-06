@@ -42,7 +42,3 @@ class BlockStoreAPI (dapp.API):
 
 		msg = message.BlockStoreMessage.set (key, value)
 		return self.createTransactionResponse (msg)
-		
-		#[datahash, outscript, tempid] = msg.toOutputScript (self.dht)
-		#r = { "outscript": outscript, "datahash": datahash, "tempid": tempid, "fee": proto.Protocol.estimateFee (self.core.getChainCode (), 100 * len (value)) }
-		#return r
