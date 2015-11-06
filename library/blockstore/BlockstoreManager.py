@@ -9,8 +9,8 @@ class BlockstoreManager (DappManager.DappManager):
 		super (BlockstoreManager, self).__init__(consensusManager, wallet)
 
 	def set (self, key, value):
-		cid = self._produce_transaction ('blockstore.set', [key, value])
+		cid = self.produceTransaction ('blockstore.set', [key, value])
 		return cid
-	
+
 	def get (self, key):
 		return self.consensusManager.jsonConsensusCall ('blockstore.get', [key])['result']
