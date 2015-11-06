@@ -3,4 +3,4 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #WALLET_NODE_URL = "http://test:testpass@localhost:18332"
-WALLET_NODE_URL = "http://test:testpass@82.196.1.65:8080"
+WALLET_NODE_URL = "http://test:testpass@51.254.215.160:8080"
