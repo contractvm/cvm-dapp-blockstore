@@ -8,8 +8,8 @@ from contractvmd import dapp, config
 logger = logging.getLogger(config.APP_NAME)
 
 class BlockStoreCore (dapp.Core):
-	def __init__ (self, chain, database):
-		super (BlockStoreCore, self).__init__ (chain, database)
+	#def __init__ (self, chain, database):
+	#	super (BlockStoreCore, self).__init__ (chain, database)
 
 	def set (self, key, value):
 		if self.database.exists (key):

@@ -25,7 +25,6 @@ class BlockStoreAPI (dapp.API):
 
 		errors = { 'KEY_ALREADY_SET': {'code': -2, 'message': 'Key already set'}, 'KEY_IS_NOT_SET': {'code': -3, 'message': 'Key is not set'} }
 
-
 		super (BlockStoreAPI, self).__init__(core, dht, rpcmethods, errors)
 
 

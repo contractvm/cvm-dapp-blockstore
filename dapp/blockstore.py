@@ -19,5 +19,3 @@ class blockstore (dapp.Dapp):
 		if m.Method == proto.BlockStoreProto.METHOD_SET:
 			logger.pluginfo ('Found new message %s: set %s', m.Hash, m.Data['key'])
 			self.core.set (m.Data['key'], m.Data['value'])
-			
-		
