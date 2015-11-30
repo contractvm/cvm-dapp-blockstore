@@ -7,7 +7,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 setup(name='blockstore',
-	version='0.0.1',
+	version='0.1',
 	description='Blockstore dapp library',
 	author='Davide Gessa',
 	setup_requires='setuptools',
